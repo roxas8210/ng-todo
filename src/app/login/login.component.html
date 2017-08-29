@@ -1,0 +1,12 @@
+<div>
+  <form #formRef="ngForm" (ngSubmit)="onSubmit(formRef.value)">
+    <fieldset ngModelGroup="login">
+      <input placeholder="请输入用户名" name="username" type="text" [(ngModel)]="username" required minlength="3" #usernameRef="ngModel" />
+      <div *ngIf="usernameRef.errors?.required">this is required</div>
+      <div *ngIf="usernameRef.errors?.minlength">should be at least 3 characters</div>
+      <input (focus)="onFocus()" placeholder="请输入密码" name="password" type="password" [(ngModel)]="password" required #passwordRef="ngModel" />
+      <div *ngIf="passwordRef.errors?.requried">this is required</div>
+      <button type="submit">Login</button>
+    </fieldset>
+  </form>
+</div>
