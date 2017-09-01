@@ -1,18 +1,16 @@
 import { Routes, RouterModule } from '@angular/router';
-import { TodoComponent } from './todo/todo.component';
 import { LoginComponent } from './login/login.component';
-import { ModuleWithProviders } from '@angular/core';
 
-export const routers: Routes = [{
+export const routes: Routes = [{
     path: '',
-    redirectTo: 'todo',
+    redirectTo: 'login',
     pathMatch: 'full'
 },{
     path: 'todo',
-    component: TodoComponent
+    redirectTo: 'todo'
 },{
     path: 'login',
     component: LoginComponent
 }];
 
-export const routing: ModuleWithProviders = RouterModule.forRoot(routers);
+export const routing = RouterModule.forRoot(routes);
